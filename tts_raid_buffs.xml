@@ -10,7 +10,7 @@
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="false" Grouping="Or">
+        <Condition Enabled="true" Grouping="Or">
           <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
           <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
@@ -23,7 +23,7 @@
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="false" Grouping="Or">
+        <Condition Enabled="true" Grouping="Or">
           <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
           <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
@@ -36,7 +36,7 @@
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="false" Grouping="Or">
+        <Condition Enabled="true" Grouping="Or">
           <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
           <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
@@ -49,7 +49,7 @@
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="false" Grouping="Or">
+        <Condition Enabled="true" Grouping="Or">
           <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
           <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
@@ -62,7 +62,7 @@
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="false" Grouping="Or">
+        <Condition Enabled="true" Grouping="Or">
           <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
           <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
@@ -75,7 +75,7 @@
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="false" Grouping="Or">
+        <Condition Enabled="true" Grouping="Or">
           <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
           <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
@@ -88,7 +88,7 @@
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="false" Grouping="Or">
+        <Condition Enabled="true" Grouping="Or">
           <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
           <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
@@ -101,7 +101,7 @@
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="false" Grouping="Or">
+        <Condition Enabled="true" Grouping="Or">
           <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
           <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
@@ -114,7 +114,7 @@
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="false" Grouping="Or">
+        <Condition Enabled="true" Grouping="Or">
           <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
           <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
