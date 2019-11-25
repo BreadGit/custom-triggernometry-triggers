@@ -3,111 +3,120 @@
   <ExportedFolder Id="3c1de5a4-b959-4f57-9a47-b1d91032b1eb" Name="TTS Raid Buffs" Enabled="true">
     <Folders />
     <Triggers>
-      <Trigger Enabled="true" Name="Battle Litany" Id="481200c4-a63b-4152-8a69-813d44f34c46" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;.+?):.+?:(?&lt;skill&gt;Battle Litany)" DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
+      <Trigger Enabled="true" Name="Battle Litany" Id="55aceed5-6d25-4c38-81b0-41a60b395a82" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;[\w']+?\s[\w']+?|YOU|You)\suses?\s(?&lt;skill&gt;Battle Litany)\." DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
         <Actions>
-          <Action OrderNumber="1" MessageBoxText="${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+          <Action OrderNumber="1" MessageBoxText="${player} ${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
             <Condition Enabled="false" Grouping="Or" />
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="true" Grouping="And">
-          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty} " ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+        <Condition Enabled="false" Grouping="Or">
+          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
         <Conditions />
       </Trigger>
-      <Trigger Enabled="true" Name="Battle Voice" Id="9e420ed0-a141-4440-accc-2bcc7291edd9" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;.+?):.+?:(?&lt;skill&gt;Battle Voice)" DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
+      <Trigger Enabled="true" Name="Battle Voice" Id="55aceed5-6d25-4c38-81b0-41a60b395a82" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;[\w']+?\s[\w']+?|YOU|You)\suses?\s(?&lt;skill&gt;Battle Voice)\." DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
         <Actions>
-          <Action OrderNumber="1" MessageBoxText="${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+          <Action OrderNumber="1" MessageBoxText="${player} ${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
             <Condition Enabled="false" Grouping="Or" />
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="true" Grouping="And">
-          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty} " ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+        <Condition Enabled="false" Grouping="Or">
+          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
         <Conditions />
       </Trigger>
-      <Trigger Enabled="true" Name="Trick Attack" Id="fded3d84-053b-40fb-92aa-969594ffed04" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;.+?):.+?:(?&lt;skill&gt;Trick Attack)" DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
+      <Trigger Enabled="true" Name="Brotherhood" Id="55aceed5-6d25-4c38-81b0-41a60b395a82" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;[\w']+?\s[\w']+?|YOU|You)\suses?\s(?&lt;skill&gt;Brotherhood)\." DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
         <Actions>
-          <Action OrderNumber="1" MessageBoxText="${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+          <Action OrderNumber="1" MessageBoxText="${player} ${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
             <Condition Enabled="false" Grouping="Or" />
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="true" Grouping="And">
-          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty} " ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+        <Condition Enabled="false" Grouping="Or">
+          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
         <Conditions />
       </Trigger>
-      <Trigger Enabled="true" Name="Chain Stratagem" Id="0ea240e8-6c67-4440-9a46-4b1f51687831" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;.+?):.+?:(?&lt;skill&gt;Chain Stratagem)" DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
+      <Trigger Enabled="true" Name="Chain Stratagem" Id="55aceed5-6d25-4c38-81b0-41a60b395a82" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;[\w']+?\s[\w']+?|YOU|You)\suses?\s(?&lt;skill&gt;Chain Stratagem)\." DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
         <Actions>
-          <Action OrderNumber="1" MessageBoxText="${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+          <Action OrderNumber="1" MessageBoxText="${player} ${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
             <Condition Enabled="false" Grouping="Or" />
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="true" Grouping="And">
-          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty} " ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+        <Condition Enabled="false" Grouping="Or">
+          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
         <Conditions />
       </Trigger>
-      <Trigger Enabled="true" Name="Brotherhood" Id="6e21d766-2984-4bbf-a437-18d570d3bdf6" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;.+?):.+?:(?&lt;skill&gt;Brotherhood)" DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
+      <Trigger Enabled="true" Name="Devotion" Id="55aceed5-6d25-4c38-81b0-41a60b395a82" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;[\w']+?\s[\w']+?|YOU|You)\suses?\s(?&lt;skill&gt;Devotion)\." DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
         <Actions>
-          <Action OrderNumber="1" MessageBoxText="${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+          <Action OrderNumber="1" MessageBoxText="${player} ${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
             <Condition Enabled="false" Grouping="Or" />
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="true" Grouping="And">
-          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty} " ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+        <Condition Enabled="false" Grouping="Or">
+          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
         <Conditions />
       </Trigger>
-      <Trigger Enabled="true" Name="Devotion" Id="99986fe9-ac16-4a78-9617-f7d3d1853fb3" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;.+?):.+?:(?&lt;skill&gt;Devotion)" DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
+      <Trigger Enabled="true" Name="Divination" Id="55aceed5-6d25-4c38-81b0-41a60b395a82" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;[\w']+?\s[\w']+?|YOU|You)\suses?\s(?&lt;skill&gt;Divination)\." DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
         <Actions>
-          <Action OrderNumber="1" MessageBoxText="${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+          <Action OrderNumber="1" MessageBoxText="${player} ${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
             <Condition Enabled="false" Grouping="Or" />
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="true" Grouping="And">
-          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty} " ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+        <Condition Enabled="false" Grouping="Or">
+          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
         <Conditions />
       </Trigger>
-      <Trigger Enabled="true" Name="Divination" Id="4f1c6f84-f12f-4313-beeb-9c939490436e" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;.+?):.+?:(?&lt;skill&gt;Divination)" DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
+      <Trigger Enabled="true" Name="Embolden" Id="55aceed5-6d25-4c38-81b0-41a60b395a82" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;[\w']+?\s[\w']+?|YOU|You)\suses?\s(?&lt;skill&gt;Embolden)\." DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
         <Actions>
-          <Action OrderNumber="1" MessageBoxText="${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+          <Action OrderNumber="1" MessageBoxText="${player} ${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
             <Condition Enabled="false" Grouping="Or" />
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="true" Grouping="And">
-          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty} " ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+        <Condition Enabled="false" Grouping="Or">
+          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
         <Conditions />
       </Trigger>
-      <Trigger Enabled="true" Name="Embolden" Id="4c7af1fc-d64b-452b-a489-49f3db7753e9" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;.+?):.+?:(?&lt;skill&gt;Embolden)" DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
+      <Trigger Enabled="true" Name="Technical Step" Id="55aceed5-6d25-4c38-81b0-41a60b395a82" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;[\w']+?\s[\w']+?|YOU|You)\suses?\s(?&lt;skill&gt;Technical Step)\." DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
         <Actions>
-          <Action OrderNumber="1" MessageBoxText="${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+          <Action OrderNumber="1" MessageBoxText="${player} ${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
             <Condition Enabled="false" Grouping="Or" />
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="true" Grouping="And">
-          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty} " ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+        <Condition Enabled="false" Grouping="Or">
+          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
         <Conditions />
       </Trigger>
-      <Trigger Enabled="true" Name="Technical Step" Id="88968765-7969-457b-86fb-e950154300a7" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;.+?):.+?:(?&lt;skill&gt;Technical Step)" DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
+      <Trigger Enabled="true" Name="Trick Attack" Id="55aceed5-6d25-4c38-81b0-41a60b395a82" RegularExpression="\[.+?\]\s.+?:.+?:(?&lt;player&gt;[\w']+?\s[\w']+?|YOU|You)\suses?\s(?&lt;skill&gt;Trick Attack)\." DebugLevel="Warning" PrevActions="Interrupt" Description="The regex saves two variables from the log line it matches: &quot;player&quot; and &quot;skill&quot;&#xD;&#xA;&#xD;&#xA;If the matched &quot;player&quot; is in the current party, then the TTS will output the name of the &quot;skill&quot;">
         <Actions>
-          <Action OrderNumber="1" MessageBoxText="${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+          <Action OrderNumber="1" MessageBoxText="${player} ${skill}" UseTTSTextExpression="${skill}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
             <Condition Enabled="false" Grouping="Or" />
             <Conditions />
           </Action>
         </Actions>
-        <Condition Enabled="true" Grouping="And">
-          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty} " ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+        <Condition Enabled="false" Grouping="Or">
+          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="YOU" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
         <Conditions />
       </Trigger>
